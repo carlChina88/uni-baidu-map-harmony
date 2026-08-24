@@ -1,0 +1,6 @@
+{
+  "minPlatformVersion": 12,
+  "dependencies": {
+    "@bdmap/navi_map": "./libs/navi_map-2.0.5.har"
+  }
+}

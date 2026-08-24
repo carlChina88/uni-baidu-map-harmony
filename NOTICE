@@ -1,0 +1,6 @@
+uni-baidu-map-harmony is an independent adapter maintained under the MIT
+License. It is not an official Baidu Maps or DCloud project.
+
+The optional Baidu HarmonyOS SDK is a separate third-party dependency. It is
+not included in this repository and is governed by its own license, privacy
+policy, service terms, and AK requirements.

@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest a focused improvement to the generic adapter.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What host-app problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Proposed API
+      description: Describe the smallest compatible options or event change.
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Include platform, privacy, permission, and vendor SDK constraints.

@@ -1,0 +1,29 @@
+{
+  "name": "uni-baidu-map-harmony",
+  "id": "uni-baidu-map-harmony",
+  "version": "0.1.0",
+  "description": "A HarmonyOS NEXT native Baidu Map embed plugin for uni-app and UTS.",
+  "keywords": [
+    "baidu-map",
+    "harmonyos",
+    "harmonyos-next",
+    "uni-app",
+    "uts"
+  ],
+  "main": "utssdk/index.uts",
+  "license": "MIT",
+  "files": [
+    "package.json",
+    "utssdk",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "uni_modules": {
+    "platforms": [
+      "app-harmony"
+    ],
+    "treeShaking": false
+  }
+}

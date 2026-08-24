@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible adapter or documentation problem.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove AKs, signing files, private resources, and personal data.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include HarmonyOS, HBuilderX, uni-app, and Baidu SDK versions.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide the smallest safe reproduction and relevant logs.
+    validations:
+      required: true

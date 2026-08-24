@@ -1,0 +1,9 @@
+/**
+ * HarmonyOS-only entry point.
+ *
+ * Importing this module registers the native embed tag used by the Vue
+ * template: <embed tag="baidu-map" />.
+ */
+// #ifdef APP-HARMONY
+import './app-harmony/index'
+// #endif

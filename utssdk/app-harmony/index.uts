@@ -1,0 +1,11 @@
+/**
+ * Registers the ArkTS native embed implementation.
+ *
+ * The import is intentionally side-effect-only: loading the ETS module calls
+ * defineNativeEmbed('baidu-map', ...). The plugin does not expose a separate
+ * initMap function because initialization is owned by the native embed
+ * lifecycle and is performed lazily after explicit privacy consent.
+ */
+// #ifdef APP-HARMONY
+import './baidu-map-embed.ets'
+// #endif
