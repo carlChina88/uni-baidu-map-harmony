@@ -30,10 +30,10 @@ interface CenterPoint {
   lon: number
 }
 
-interface StoreMarkerOptions {
+interface MarkerOptions {
   lat: number
   lon: number
-  logo?: string
+  icon?: string
   name?: string
   distance?: string
   address?: string
@@ -52,7 +52,7 @@ interface BaiduMapBuilderOptions extends NativeEmbedBuilderOptions {
   /** Host-provided fallback marker icon in rawfile:// form. */
   defaultMarkerIcon?: string
   /** Optional single marker rendered by the plugin. */
-  storeMarker?: StoreMarkerOptions
+  marker?: MarkerOptions
 }
 
 interface MapReadyDetail {
@@ -140,7 +140,7 @@ struct BaiduMapWrapper {
   @Prop @Watch('onPrivacyAgreedChanged') privacyAgreed: boolean = false
   @Prop oaidEnabled: boolean = false
   @Prop @Watch('onCenterPropChanged') center?: CenterPoint
-  @Prop @Watch('onStoreMarkerChanged') storeMarker?: StoreMarkerOptions
+  @Prop @Watch('onMarkerChanged') marker?: MarkerOptions
   @Prop defaultMarkerIcon: string = 'rawfile://marker.png'
   @Prop zoom: number = 16
   @State inited: boolean = false
@@ -153,7 +153,7 @@ struct BaiduMapWrapper {
   private lastCenterLat: number = 39.914935
   private lastCenterLon: number = 116.403119
   private isProgrammaticCenterChange: boolean = false
-  private storeMarkerOverlay?: Marker
+  private markerOverlay?: Marker
 
   async aboutToAppear(): Promise<void> {
     await this.initializeMap()
@@ -162,7 +162,7 @@ struct BaiduMapWrapper {
   aboutToDisappear(): void {
     this.markerRequestId += 1
 
-    if (this.debounceTimer) {
+    if (this.debounceTimer !== undefined) {
       clearTimeout(this.debounceTimer)
       this.debounceTimer = undefined
     }
@@ -172,9 +172,9 @@ struct BaiduMapWrapper {
       this.onStatusChangeFinish = undefined
     }
 
-    if (this.controller && this.storeMarkerOverlay) {
-      this.controller.removeOverlay(this.storeMarkerOverlay)
-      this.storeMarkerOverlay = undefined
+    if (this.controller && this.markerOverlay) {
+      this.controller.removeOverlay(this.markerOverlay)
+      this.markerOverlay = undefined
     }
   }
 
@@ -224,11 +224,11 @@ struct BaiduMapWrapper {
     this.controller.setMapCenter(point)
   }
 
-  onStoreMarkerChanged(): void {
-    void this.updateStoreMarker()
+  onMarkerChanged(): void {
+    void this.updateMarker()
   }
 
-  private createStorePopView(markerData: StoreMarkerOptions): PopView {
+  private createMarkerPopView(markerData: MarkerOptions): PopView {
     const popView = new PopView()
     const bubbleLayout = new VerticalLayout()
     bubbleLayout.setGravity(SysEnum.Gravity.GRAVITY_CENTER)
@@ -305,23 +305,23 @@ struct BaiduMapWrapper {
     return popView
   }
 
-  private async updateStoreMarker(): Promise<void> {
+  private async updateMarker(): Promise<void> {
     const controller = this.controller
     if (!controller) return
 
     const requestId = ++this.markerRequestId
-    const previousMarker = this.storeMarkerOverlay
+    const previousMarker = this.markerOverlay
     if (previousMarker) {
       controller.removeOverlay(previousMarker)
-      this.storeMarkerOverlay = undefined
+      this.markerOverlay = undefined
     }
 
-    const markerData = this.storeMarker
+    const markerData = this.marker
     if (!markerData) return
 
-    const iconSource = markerData.logo || this.defaultMarkerIcon
+    const iconSource = markerData.icon || this.defaultMarkerIcon
     if (!iconSource) {
-      console.warn('[uni-baidu-map-harmony] A marker icon is required when storeMarker is provided.')
+      console.warn('[uni-baidu-map-harmony] A marker icon is required when marker is provided.')
       return
     }
 
@@ -329,7 +329,7 @@ struct BaiduMapWrapper {
       position: new LatLng(markerData.lat, markerData.lon),
       icon: new ImageEntity(iconSource, 80, 80),
       popView: markerData.name || markerData.distance || markerData.address
-        ? this.createStorePopView(markerData)
+        ? this.createMarkerPopView(markerData)
         : undefined,
     })
 
@@ -339,7 +339,7 @@ struct BaiduMapWrapper {
         controller.removeOverlay(marker)
         return
       }
-      this.storeMarkerOverlay = marker
+      this.markerOverlay = marker
     } catch (error) {
       console.error('[uni-baidu-map-harmony] Failed to add marker: ' + error)
     }
@@ -379,7 +379,7 @@ struct BaiduMapWrapper {
           const targetPoint: LatLng = new LatLng(centerLat, centerLon)
           this.isProgrammaticCenterChange = true
           controller.setMapCenter(targetPoint, this.zoom)
-          void this.updateStoreMarker()
+          void this.updateMarker()
 
           const mapController = controller
           this.onStatusChangeFinish = (_event: TMapViewEvent) => {
@@ -392,7 +392,7 @@ struct BaiduMapWrapper {
             this.lastCenterLat = center.lat
             this.lastCenterLon = center.lng
 
-            if (this.debounceTimer) {
+            if (this.debounceTimer !== undefined) {
               clearTimeout(this.debounceTimer)
             }
 
@@ -428,7 +428,7 @@ function BaiduMapBuilder(options: BaiduMapBuilderOptions): void {
     privacyAgreed: options.privacyAgreed,
     oaidEnabled: options.oaidEnabled,
     center: options.center,
-    storeMarker: options.storeMarker,
+    marker: options.marker,
     defaultMarkerIcon: options.defaultMarkerIcon,
     zoom: options.zoom,
     onReady: options.on?.get('ready'),

@@ -79,7 +79,7 @@ if (!fs.existsSync(sdkPath)) {
   if (requireSdk) {
     failures.push(message)
   } else {
-    console.warn(`Warning: ${message} (expected for the source repository)`)
+    console.warn(`Warning: ${message} (expected for this repository)`)
   }
 } else {
   const size = fs.statSync(sdkPath).size
