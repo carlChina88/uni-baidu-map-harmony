@@ -11,6 +11,18 @@ NEXT map SDK. The host application remains responsible for business state,
 location permissions, coordinate conversion, navigation, and privacy-policy
 UI.
 
+## Concept previews
+
+> The images below are AI-generated concept previews of the current v0.1.0 capabilities. They are **not HarmonyOS device-verification screenshots**. Real-device rendering still requires a legally obtained Baidu HAR, a valid AK, matching package/signature configuration, and a compatible uni-app/HBuilderX host project.
+>
+> 下图为 AI 生成的功能概念预览，并非 HarmonyOS 真机验证截图。真实渲染效果仍需在具备合法百度 HAR、有效 AK、匹配包名/签名及兼容 uni-app/HBuilderX 环境的真机项目中验证。
+
+<p align="center">
+  <img src="docs/images/basic-map.png" width="31%" alt="Basic map AI concept preview" />
+  <img src="docs/images/marker-popview.png" width="31%" alt="Marker and PopView AI concept preview" />
+  <img src="docs/images/map-interaction.png" width="31%" alt="Map interaction AI concept preview" />
+</p>
+
 ## Why this project exists
 
 The official uni-app HarmonyOS documentation currently lists Tencent Maps for
