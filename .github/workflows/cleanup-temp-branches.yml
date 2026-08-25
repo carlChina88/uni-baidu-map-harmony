@@ -1,0 +1,43 @@
+name: Cleanup temporary branches
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/cleanup-temp-branches.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Delete temporary branches
+        run: |
+          for branch in \
+            tmp-check \
+            docs-phone-demo-screenshots \
+            docs-phone-demo-screenshots-2 \
+            docs-phone-demo-screenshots-final \
+            docs-phone-demo-screenshots-ok \
+            docs-phone-demo-screenshots-ready \
+            docs-phone-demo-screenshots-use-this
+          do
+            git push origin --delete "$branch" || true
+          done
+
+      - name: Remove this one-time workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm .github/workflows/cleanup-temp-branches.yml
+          git add .github/workflows/cleanup-temp-branches.yml
+          git commit -m "ci: remove one-time branch cleanup workflow"
+          git push origin HEAD:master
