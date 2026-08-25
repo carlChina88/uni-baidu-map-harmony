@@ -8,8 +8,18 @@
     "harmonyos",
     "harmonyos-next",
     "uni-app",
-    "uts"
+    "uts",
+    "openharmony",
+    "native-embed"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlChina88/uni-baidu-map-harmony.git"
+  },
+  "bugs": {
+    "url": "https://github.com/carlChina88/uni-baidu-map-harmony/issues"
+  },
+  "homepage": "https://github.com/carlChina88/uni-baidu-map-harmony#readme",
   "main": "utssdk/index.uts",
   "license": "MIT",
   "files": [

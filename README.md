@@ -11,6 +11,19 @@ NEXT map SDK. The host application remains responsible for business state,
 location permissions, coordinate conversion, navigation, and privacy-policy
 UI.
 
+## Why this project exists
+
+The official uni-app HarmonyOS documentation currently lists Tencent Maps for
+the built-in `map` component. It does not provide a Baidu Maps option for the
+traditional `uni-app` + `APP-HARMONY` path. This project fills that specific
+gap by exposing Baidu's HarmonyOS NEXT native map SDK through UTS and
+`defineNativeEmbed`.
+
+See the official [HarmonyOS built-in module documentation](https://uniapp.dcloud.net.cn/tutorial/harmony/built-in-module.html),
+[map platform differences](https://uniapp.dcloud.net.cn/component/map), and
+[native embed documentation](https://uniapp.dcloud.net.cn/tutorial/harmony/native-component.html)
+for the surrounding platform capabilities.
+
 > The wrapper code in this repository is MIT-licensed. The Baidu SDK is a
 > separate third-party dependency and is not covered by the wrapper license.
 > See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
@@ -200,6 +213,19 @@ The host app should own the consent state. Passing `privacyAgreed: false`
 prevents SDK initialization and reports an error through `ready`; changing it
 to `true` allows the embed to initialize without remounting the page.
 
+## Demo and verification
+
+The focused [basic-map.vue example](examples/basic-map.vue) shows the complete
+embed registration, privacy-consent transition, center-change event handling,
+and host-side configuration flow. To run it, add the legally obtained HAR,
+configure the AK, register the required Harmony permissions, and open the
+example from a real HarmonyOS-capable uni-app host project.
+
+The repository intentionally does not include the vendor HAR or a real AK.
+Source validation can run without them, but map rendering and device behavior
+remain unverified until the host project supplies both and performs a real
+HarmonyOS build.
+
 ## Marker usage
 
 `marker` is optional. When it is supplied, the host app must provide a marker
@@ -312,6 +338,8 @@ see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 ## Official references
 
 - [uni-app Harmony native embed](https://uniapp.dcloud.net.cn/tutorial/harmony/native-component.html)
+- [uni-app HarmonyOS built-in modules](https://uniapp.dcloud.net.cn/tutorial/harmony/built-in-module.html)
+- [uni-app map platform differences](https://uniapp.dcloud.net.cn/component/map)
 - [Baidu HarmonyOS NEXT map SDK product download](https://lbsyun.baidu.com/docs/harmony?title=harmonynextsdk/sdkandev-download)
 - [Baidu map display guide](https://lbsyun.baidu.com/docs/harmony?title=harmonynextsdk/guide/create-map/showmap)
 - [Baidu marker guide](https://lbsyun.baidu.com/docs/harmony?title=harmonynextsdk/guide/render-map/point)
@@ -329,6 +357,16 @@ see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 本仓库提供适配层，用于注册原生 `<embed tag="baidu-map" />` 组件并连接
 百度 HarmonyOS NEXT 地图 SDK。宿主应用仍负责业务状态、定位权限、坐标转换、
 导航以及隐私政策界面。
+
+## 项目存在的原因
+
+uni-app 官方 HarmonyOS 文档目前为内置 `map` 组件列出的地图服务商是腾讯地图，
+没有为传统 `uni-app` + `APP-HARMONY` 路径提供百度地图选项。本项目通过 UTS 和
+`defineNativeEmbed` 暴露百度 HarmonyOS NEXT 原生地图 SDK，补充这一明确的生态缺口。
+
+可参考官方的 [HarmonyOS 内置模块说明](https://uniapp.dcloud.net.cn/tutorial/harmony/built-in-module.html)、
+[地图平台差异说明](https://uniapp.dcloud.net.cn/component/map) 和
+[鸿蒙原生 embed 组件说明](https://uniapp.dcloud.net.cn/tutorial/harmony/native-component.html)。
 
 包装器代码使用 MIT 许可证。百度 SDK 属于独立的第三方依赖，不包含在包装器
 许可证范围内，详见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
@@ -479,6 +517,15 @@ function handleCenterChange(event) {
 
 `privacyAgreed: false` 会阻止 SDK 初始化并通过 `ready` 报错；更新为 `true`
 后可以在不重新挂载页面的情况下初始化 embed。
+
+## 示例和验证
+
+完整的 embed 注册、隐私同意状态切换、中心点变化事件处理和宿主配置流程见
+[basic-map.vue 示例](examples/basic-map.vue)。运行前需要准备合法取得的 HAR、
+AK、Harmony 权限，并在真实支持 HarmonyOS 的 uni-app 宿主工程中打开示例。
+
+仓库不会包含 Vendor HAR 或真实 AK。没有这些文件时可以执行源码校验，但地图渲染
+和设备行为必须等宿主工程完成真实 HarmonyOS 构建后才能确认。
 
 ## Marker 使用
 
