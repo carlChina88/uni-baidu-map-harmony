@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Map interaction concept preview</title>
+  <desc id="desc">AI-generated concept preview for uni-baidu-map-harmony showing a center-change interaction.</desc>
+  <rect width="720" height="1280" fill="#f6f8fa"/>
+  <rect x="70" y="34" width="580" height="1212" rx="52" fill="#0d1117"/>
+  <rect x="86" y="50" width="548" height="1180" rx="40" fill="#ffffff"/>
+  <rect x="275" y="66" width="170" height="22" rx="11" fill="#0d1117"/>
+  <text x="116" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="30" font-weight="700" fill="#1f2328">uni-baidu-map-harmony</text>
+  <text x="116" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="22" fill="#57606a">Map Interaction · centerchange</text>
+  <g transform="translate(104 220)">
+    <rect width="512" height="760" rx="24" fill="#eef7f2"/>
+    <path d="M0 92 C130 134 204 70 318 118 S446 146 512 116" fill="none" stroke="#8fd3b2" stroke-width="18"/>
+    <path d="M58 0 C118 120 72 244 124 344 S148 612 104 760" fill="none" stroke="#c8d7e1" stroke-width="14"/>
+    <path d="M0 468 C112 426 230 496 332 448 S456 408 512 430" fill="none" stroke="#f4c77b" stroke-width="12"/>
+    <path d="M402 0 C356 120 430 206 386 330 S352 572 420 760" fill="none" stroke="#c8d7e1" stroke-width="10"/>
+    <rect x="32" y="40" width="128" height="88" rx="12" fill="#dce8f7"/>
+    <rect x="198" y="72" width="110" height="120" rx="12" fill="#e6ecf3"/>
+    <rect x="354" y="56" width="120" height="92" rx="12" fill="#dce8f7"/>
+    <rect x="46" y="244" width="126" height="122" rx="12" fill="#e6ecf3"/>
+    <rect x="220" y="250" width="116" height="106" rx="12" fill="#dce8f7"/>
+    <rect x="374" y="234" width="102" height="138" rx="12" fill="#e6ecf3"/>
+    <path d="M120 528 C180 500 226 548 280 516 S382 490 424 526" fill="none" stroke="#2f81f7" stroke-width="5" stroke-dasharray="12 10"/>
+    <circle cx="282" cy="410" r="34" fill="#2f81f7" opacity="0.16"/>
+    <circle cx="282" cy="410" r="14" fill="#2f81f7"/>
+    <circle cx="282" cy="410" r="6" fill="#ffffff"/>
+    <rect x="88" y="42" width="336" height="68" rx="18" fill="#24292f" opacity="0.92"/>
+    <text x="256" y="84" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="600" fill="#ffffff">Center updated · centerchange emitted</text>
+    <path d="M242 392 L264 410 L242 428" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.9"/>
+    <path d="M322 392 L300 410 L322 428" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.9"/>
+    <rect x="430" y="616" width="56" height="112" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="458" y="662" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1f2328">+</text>
+    <line x1="442" y1="674" x2="474" y2="674" stroke="#d0d7de"/>
+    <text x="458" y="714" text-anchor="middle" font-family="sans-serif" font-size="34" fill="#1f2328">−</text>
+  </g>
+  <rect x="104" y="1008" width="512" height="92" rx="20" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="128" y="1046" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" fill="#57606a">Event detail</text>
+  <text x="128" y="1078" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="20" fill="#1f2328">{ lat, lon } · 500 ms debounce</text>
+  <rect x="104" y="1130" width="512" height="62" rx="16" fill="#ddf4ff"/>
+  <text x="360" y="1169" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="600" fill="#0969da">AI-generated concept preview · 非真机验证截图</text>
+</svg>
