@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Basic map concept preview</title>
+  <desc id="desc">AI-generated concept preview for uni-baidu-map-harmony showing a basic map view.</desc>
+  <rect width="720" height="1280" fill="#f6f8fa"/>
+  <rect x="70" y="34" width="580" height="1212" rx="52" fill="#0d1117"/>
+  <rect x="86" y="50" width="548" height="1180" rx="40" fill="#ffffff"/>
+  <rect x="275" y="66" width="170" height="22" rx="11" fill="#0d1117"/>
+  <text x="116" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="30" font-weight="700" fill="#1f2328">uni-baidu-map-harmony</text>
+  <text x="116" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="22" fill="#57606a">Basic Map · HarmonyOS NEXT</text>
+  <g transform="translate(104 220)">
+    <rect width="512" height="760" rx="24" fill="#eef7f2"/>
+    <path d="M0 116 C120 90 190 150 320 112 S462 84 512 104" fill="none" stroke="#8fd3b2" stroke-width="18"/>
+    <path d="M72 0 C92 122 62 220 104 356 S124 628 88 760" fill="none" stroke="#c8d7e1" stroke-width="14"/>
+    <path d="M0 456 C124 430 238 470 330 444 S452 406 512 426" fill="none" stroke="#f4c77b" stroke-width="12"/>
+    <path d="M392 0 C364 122 418 202 386 322 S354 570 404 760" fill="none" stroke="#c8d7e1" stroke-width="10"/>
+    <rect x="26" y="40" width="132" height="88" rx="12" fill="#dce8f7"/>
+    <rect x="192" y="72" width="112" height="120" rx="12" fill="#e6ecf3"/>
+    <rect x="350" y="54" width="120" height="92" rx="12" fill="#dce8f7"/>
+    <rect x="40" y="236" width="130" height="126" rx="12" fill="#e6ecf3"/>
+    <rect x="218" y="246" width="116" height="104" rx="12" fill="#dce8f7"/>
+    <rect x="372" y="232" width="104" height="136" rx="12" fill="#e6ecf3"/>
+    <rect x="68" y="536" width="126" height="112" rx="12" fill="#dce8f7"/>
+    <rect x="238" y="542" width="128" height="94" rx="12" fill="#e6ecf3"/>
+    <circle cx="256" cy="396" r="25" fill="#2f81f7" opacity="0.18"/>
+    <circle cx="256" cy="396" r="12" fill="#2f81f7"/>
+    <circle cx="256" cy="396" r="5" fill="#ffffff"/>
+    <text x="24" y="724" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="17" fill="#57606a">BD09 center preview</text>
+    <rect x="430" y="616" width="56" height="112" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="458" y="662" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1f2328">+</text>
+    <line x1="442" y1="674" x2="474" y2="674" stroke="#d0d7de"/>
+    <text x="458" y="714" text-anchor="middle" font-family="sans-serif" font-size="34" fill="#1f2328">−</text>
+  </g>
+  <rect x="104" y="1008" width="512" height="92" rx="20" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="128" y="1046" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" fill="#57606a">Center</text>
+  <text x="128" y="1078" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="20" fill="#1f2328">22.147624, 113.580231</text>
+  <rect x="104" y="1130" width="512" height="62" rx="16" fill="#ddf4ff"/>
+  <text x="360" y="1169" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="600" fill="#0969da">AI-generated concept preview · 非真机验证截图</text>
+</svg>
